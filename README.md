@@ -43,8 +43,9 @@
 
 ## Other
 
-- Nx
-- Storybook
+- Nx: Monorepo management
+- Storybook: UI preview
+- Sentry: Monitoring
 
 # Resources
 
