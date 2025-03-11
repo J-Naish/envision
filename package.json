@@ -5,11 +5,14 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
     "@nx/eslint": "^20.5.0",
     "@nx/js": "20.5.0",
     "@nx/workspace": "20.5.0",
     "eslint": "~8.57.0",
-    "nx": "20.5.0"
-  },
-  "dependencies": {}
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
+    "nx": "20.5.0",
+    "typescript-eslint": "^8.26.1"
+  }
 }
