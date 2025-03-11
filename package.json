@@ -4,10 +4,14 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@nx/expo": "^20.5.0",
     "@nx/js": "20.5.0",
+    "@nx/next": "^20.5.0",
+    "@nx/node": "^20.5.0",
+    "@nx/react-native": "^20.5.0",
     "@nx/workspace": "20.5.0",
-    "nx": "20.5.0"
+    "nx": "20.5.0",
+    "nx-electron": "^20.0.2"
   }
 }
