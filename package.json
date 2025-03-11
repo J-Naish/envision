@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@expo/cli": "~0.21.8",
     "@nx/eslint": "^20.5.0",
     "@nx/expo": "^20.5.0",
     "@nx/js": "20.5.0",
@@ -16,5 +17,11 @@
     "nx": "20.5.0",
     "nx-electron": "^20.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "expo": "~52.0.11",
+    "next": "~15.1.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.76.3"
+  }
 }
