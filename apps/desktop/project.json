@@ -1,0 +1,53 @@
+{
+  "name": "desktop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/desktop",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron-builder build",
+        "cwd": "apps/desktop"
+      },
+      "configurations": {
+        "production": {
+          "command": "electron-builder build --publish never"
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron .",
+        "cwd": "apps/desktop"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron-forge start",
+        "cwd": "apps/desktop"
+      }
+    },
+    "package": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron-forge package",
+        "cwd": "apps/desktop"
+      }
+    },
+    "make": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "electron-forge make",
+        "cwd": "apps/desktop"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

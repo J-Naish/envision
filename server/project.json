@@ -1,0 +1,48 @@
+{
+  "name": "server",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "server",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/server",
+        "format": ["cjs"],
+        "bundle": true,
+        "main": "server/src/app.ts",
+        "tsConfig": "server/tsconfig.json",
+        "generatePackageJson": true
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "minify": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node dist/server/main.js",
+        "cwd": "server"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node-dev --respawn src/app.ts",
+        "cwd": "server"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
