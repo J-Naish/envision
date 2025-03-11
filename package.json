@@ -5,13 +5,16 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@nx/eslint": "^20.5.0",
     "@nx/expo": "^20.5.0",
     "@nx/js": "20.5.0",
     "@nx/next": "^20.5.0",
     "@nx/node": "^20.5.0",
     "@nx/react-native": "^20.5.0",
     "@nx/workspace": "20.5.0",
+    "eslint": "~8.57.0",
     "nx": "20.5.0",
     "nx-electron": "^20.0.2"
-  }
+  },
+  "dependencies": {}
 }
