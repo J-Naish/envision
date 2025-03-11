@@ -20,6 +20,8 @@
     "@eslint/js": "^9.22.0",
     "@nx/eslint": "^20.5.0",
     "@nx/js": "20.5.0",
+    "@nx/storybook": "^20.5.0",
+    "@nx/web": "20.5.0",
     "@nx/workspace": "20.5.0",
     "eslint": "~8.57.0",
     "eslint-plugin-react": "^7.37.4",
@@ -28,6 +30,8 @@
     "lint-staged": "^15.4.3",
     "nx": "20.5.0",
     "prettier": "^2.6.2",
+    "storybook": "^8.4.6",
     "typescript-eslint": "^8.26.1"
-  }
+  },
+  "dependencies": {}
 }
