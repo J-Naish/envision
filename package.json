@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint ."
+    "format": "nx format:write",
+    "format:check": "nx format:check",
+    "lint": "nx run-many --target=lint --projects=desktop,mobile,www,server",
+    "lint:fix": "nx run-many --target=lint --projects=desktop,mobile,www,server --fix"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
