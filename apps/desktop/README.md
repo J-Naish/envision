@@ -1,0 +1,1 @@
+# Desktop native frontend app built with Electron & React
