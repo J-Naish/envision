@@ -13,12 +13,9 @@ export default [
       },
     },
   },
-  { languageOptions: { globals: {...globals.browser, ...globals.node} }},
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   {
-    ignores: [
-      ".nx",
-      "node_modules",
-    ]
+    ignores: [".nx", "node_modules"],
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
