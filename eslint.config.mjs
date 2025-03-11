@@ -23,10 +23,17 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    rules: {
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  {
     ...pluginReact.configs.flat.recommended,
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
