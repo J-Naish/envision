@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server:/app/server
+      - /app/server/node_modules
+      - /app/server/dist
+
+  www:
+    build:
+      context: .
+      dockerfile: apps/www/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - API_URL=http://server:4000
+    volumes:
+      - ./apps/www:/app/apps/www
+      - /app/apps/www/node_modules
+      - /app/apps/www/.next
+    depends_on:
+      - server
+
+  desktop:
+    build:
+      context: .
+      dockerfile: apps/desktop/Dockerfile
+    environment:
+      - NODE_ENV=development
+      - DISPLAY=${DISPLAY} # For Linux X11 forwarding
+    volumes:
+      - ./apps/desktop:/app/apps/desktop
+      - /app/apps/desktop/node_modules
+      - /app/apps/desktop/dist
+      # For Linux X11 forwarding
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    depends_on:
+      - server
+
+  mobile-web:
+    build:
+      context: .
+      dockerfile: apps/mobile/Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./apps/mobile:/app/apps/mobile
+      - /app/apps/mobile/node_modules
+      - /app/apps/mobile/web-build
+
+volumes:
+  node_modules:
+  dist:
