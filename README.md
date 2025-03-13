@@ -1,3 +1,6 @@
+# Description
+A cross-platform MCP client & host app
+
 # Architecture
 
 ## Frontend
